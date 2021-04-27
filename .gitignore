@@ -1,0 +1,8 @@
+*.idea
+*.jpg
+*.ipynb
+__pycache__/
+node_modules
+app/final_out
+
+app/bonnetal/models

@@ -1,0 +1,50 @@
+#BBoxPanel{
+    display:none;
+    position:fixed;
+    top: 74vh;
+    border-radius:0.25em;
+    padding:0;
+    left:2em;
+    right:auto;
+    z-index:100;
+}
+.wrapper{
+    overflow-y: scroll;
+    border-radius: 5px; 
+    background-color: rgba(10, 10, 10, .5);
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    display:block;
+}
+
+#BBox_wrapper{
+    height: 16rem;
+    width: 320px; 
+
+}
+
+#BBoxPanel .wrapper{
+    height: 8rem;
+    z-index:4;
+}
+
+#submitBBox{
+    text-align: center;
+    background-color: #323232;
+    border: solid 1px #c3c3c3;
+    margin:1vh 0;
+}
+
+
+#extratools{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+}
+
+#boxDetails td{
+    padding:1vh 0;
+    
+}
+
+.text-label{
+    z-index:1;
+}

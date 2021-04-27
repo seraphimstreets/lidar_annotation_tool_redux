@@ -1,0 +1,174 @@
+
+.submitBtn{
+    text-align: center;
+    background-color: #323232;
+    border: solid 1px #c3c3c3;
+}
+
+.panels{
+    left:2em;
+}
+
+.modal{
+    display:none;
+    padding-top:20px;
+    position:fixed;
+    width: 400px;
+    height: 160px;
+    top: 50%;
+    left: 50%;
+    margin-top: -80px; /* Negative half of height. */
+    margin-left: -200px; /* Negative half of width. */
+    background-color: #323232;
+    z-index:10;
+    align-items:center;
+}
+
+#classAdd_wrapper{
+    overflow-y:unset;
+}
+
+.modal .panelRow{
+    height:50px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+#classAddPanel .panelRow label{
+    margin-right:8px;
+}
+
+.submitBtn{
+    background-color: rgba(10, 10, 10, .5);
+    width:90%;
+    padding:3px 0;
+}
+
+#confirmSaveBox{
+    height:130px
+}
+
+#saveYes, #saveNo{
+    width:40%;
+    margin:14px;
+}
+
+#imgBox{
+    position:fixed;
+    top:15%;
+    left:69%;
+    background-color: rgba(10, 10, 10, .5);
+    z-index:50;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow:hidden;
+}
+
+/* #imgBox img{
+    height:200px;
+    width:300px;
+    object-fit:contain;
+} */
+
+.contana{
+    position:absolute;
+    height:60px;
+    width:100%;
+    z-index:4;
+    bottom:0;
+    text-align:right;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+
+}
+
+.image-btn{
+    margin:1px;
+    cursor:pointer;
+}
+#show-points-image{
+    /* height:20px;
+    width:20px;
+    position:absolute;
+    left:0;
+    bottom:0; */
+}
+
+#container canvas{
+    z-index:0;
+}
+#frameImage, #tempCanvas{
+  
+    position:absolute;
+
+}
+
+#imgCanvas{
+    opacity:0.75;
+    z-index:5;
+}
+
+#paintCanvas{
+    opacity:0;
+}
+#imgDisplay{
+    overflow:hidden;
+    position:relative;
+}
+
+
+#maskImage{
+    z-index:3;
+    position:absolute;
+    opacity:0.75
+}
+#imgCanvas,#maskCanvas, #paintCanvas{
+
+     
+    position:absolute;
+}
+
+
+#realCanvas, #realImage{
+    display:none;
+}
+
+#extrasBox{
+    position:fixed;
+    top:69%;
+    left:76%;
+  
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    height:40px;
+    width:280px;
+    display:none;
+}
+
+.rangeLabel{
+    display:block;
+}
+
+#maskImage, #frameImage{
+    left:0;
+    top:0;
+}
+
+#extratools{
+    position:fixed;
+    top:5%;
+    left:82%;
+}
+
+#statusTextContainer{
+    position:fixed;
+    top:10%;
+    left:82%;
+    display:none;
+}
+

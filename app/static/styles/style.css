@@ -1,0 +1,239 @@
+* {
+    font-family: 'Arial';
+}
+body {
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0px;
+  overflow: hidden;
+}
+#info {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  padding: 1em;
+  font-size: 0.8em;
+  text-align: center;
+  font-weight: bold;
+}
+a {
+  color: #fff;
+}
+nav.tools {
+    right:auto;
+    left:2em;
+}
+
+nav.tools i {
+  font-size: 12px;
+}
+
+nav {
+    position:fixed;
+    top:4em;
+    right:2em;
+    z-index:100;
+    border-radius:0.25em;
+    padding:0;
+}
+nav ul {
+    margin:0;
+    padding:0;
+}
+nav li {
+    list-style:none;
+}
+nav li:first-child a {
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+}
+nav li:last-child a {
+    border-bottom-right-radius: 0.25em;
+    border-bottom-left-radius: 0.25em;
+}
+nav a.selected {
+    color:#FFF;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100 */
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #1e5799 0%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #1e5799 0%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #1e5799 0%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+nav a {
+    cursor:pointer;
+    padding:0.75em 1em;
+    background-color:#222;
+    display:inline-block;
+    color:#999;
+    text-decoration:none;
+    font-size:0.85em;
+}
+nav a:hover {
+    background-color:#1c1c1c;
+    color:#FFF;
+}
+/*nav li + li {
+    border-top:1px solid #444;
+}*/
+
+#tools_wrapper {
+
+  height: 52vh; 
+  width: 320px;
+  
+}
+#draw_bounding_box_reminder {
+  font-size: 12px;
+  position: fixed;
+    left: 10px;
+    bottom: 0;
+    width: 200px;
+    text-align: left;
+}
+
+#frames-table {
+  border-radius: 5px; 
+  background-color: rgba(60, 60, 60, 0.4);
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+#frames-table div {
+  border-radius: 5px; 
+  background-color: rgba(80, 80, 80, 0.7);
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  /*background-color: transparentize( white, 0.15 );*/
+}
+
+/* On mouse-over, add a deeper shadow */
+#frames-table div:hover {
+  cursor: pointer;
+  background-color: rgba(120, 120, 120, 1);
+}
+
+#frames-table div[selected] {
+  background-color: rgba(120, 120, 120, 1);
+}
+
+
+#object-table, #class-table, #image-object-table, #associated-images-table,#associated-pointclouds-table, #boxes-table {
+  border-radius: 5px; 
+  background-color: rgba(60, 60, 60, 0.4);
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  width: 96%;
+}
+
+table tbody .object_row {
+  border-radius: 5px; 
+  background-color: rgba(80, 80, 80, 0.7);
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+
+#footer {
+  font-size: 12px;
+  position: fixed;
+  right: 1rem;
+  bottom: 0;
+  width: 120px;
+  text-align: left;
+}
+
+#footer p {
+  size: 50%;
+}
+
+table .object_row_id:hover  {
+ cursor: pointer;
+  background-color: rgba(120, 120, 120, 1);
+}
+
+table .object_row_id[selected] {
+  cursor: pointer;
+  background-color: rgba(120, 120, 120, 1);
+}
+
+.tools{
+  z-index:49;
+}
+
+#fullScreenCanvas{
+  display:none;
+  z-index:3;
+  position:absolute;
+  top:0;
+}
+
+.panelExit{
+  position:absolute;
+  right:5px;
+  top:5px;
+}
+
+#settings{
+    height:0.5rem;
+    width:0.5rem;
+    color:#999;
+}
+
+#settings-box{
+  position:fixed;
+  top:5%;
+  left:90%;
+  cursor:pointer;
+}
+
+/* radio toggle stuff*/
+
+#viewSelector{
+  position:absolute;
+  top:0;
+  z-index:100;
+}
+.switch-field {
+	display: flex;
+	margin-bottom: 36px;
+	overflow: hidden;
+}
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: #e4e4e4;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin-right: -1px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+	cursor: pointer;
+}
+
+.switch-field input:checked + label {
+	background-color: #a5dc86;
+	box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
+}
+
+
+/* radio toggle stuff end*/

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>LATTE</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="static/styles/style.css" rel="stylesheet">
+		<link href="static/styles/imagePanels.css" rel="stylesheet">
+		<link href="static/styles/BBoxPanel.css" rel="stylesheet">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
+		
+	</head>
+
+	<body>
+		<nav class="tools">
+			<ul id="tools">
+			
+				<li>
+					<a href="#" id="save" class="toolBtn"><i class="fa fa-floppy-o"></i></a>
+					
+					<a href="#" class="selected toolBtn" id="default3D"><i class="fa fa-home"></i></a>
+					<a href="#" id="boundingBox3D" class="toolBtn"><i class="fa fa-archive"></i></a>
+					<a href="#" id="poly3D" class="toolBtn"><i class="fa fa-pencil"></i></a>
+					<a href="#" id="rangenet" class="toolBtn"><i class="fa fa-gears"></i></a>
+					<a href="#" id="miscellaneous3DTools" class="toolBtn"><i class="fa fa-question"></i></a>
+				</li>
+				
+			</ul>
+			<ul id="tools_wrapper" class='wrapper'>
+			
+				<li>
+					<div>
+						<table id="frames-table">
+							<thead>
+								<tr style="display:block;" >
+									<td>Frames</td>
+									<td style="width:100%;"><i class="fa fa-caret-down minimize-arrow" style="float:right"></i></td>
+								</tr>
+							</thead>
+							<tbody style="overflow-y: scroll; height:12em; display:block;">
+								
+							</tbody>
+							
+						</table>
+					</div>
+				</li>
+				<li>
+					<div>
+						<table id="object-table">
+							<thead>
+								<tr style="display:block;" >
+									<td style="width:100%;">Object IDs</td>
+									<td style="width:100%;"><i class="fa fa-caret-down minimize-arrow" style="float:right"></i></td>
+								</tr>
+							</thead>
+							<tbody style="overflow-y: scroll; max-height:12em; display:block;">
+								
+							</tbody>
+							
+						</table>
+					</div>
+				</li>
+				<li>
+					<div>
+						<table id="image-object-table">
+							<thead>
+								<tr style="display:block;" >
+									<td style="width:100%;">Image Instance IDs</td>
+									<td style="width:100%;"><i class="fa fa-caret-down minimize-arrow" style="float:right"></i></td>
+								</tr>
+							</thead>
+							<tbody style="overflow-y: scroll; max-height:12em; display:block;">
+								
+							</tbody>
+							
+						</table>
+					</div>
+				</li>
+				<li>
+					<div>
+						<table id="associated-images-table">
+							<thead>
+								<tr style="display:block;" >
+									<td style="width:100%;">Associated Images</td>
+									<td style="width:100%;"><i class="fa fa-caret-down minimize-arrow" style="float:right"></i></td>
+								</tr>
+							</thead>
+							<tbody style="overflow-y: scroll; max-height:12em; display:block;">
+								
+							</tbody>
+							
+						</table>
+					</div>
+				</li>
+				<li>
+					<div>
+						<table id="associated-pointclouds-table">
+							<thead>
+								<tr style="display:block;" >
+									<td style="width:100%;">Associated Pointclouds</td>
+									<td style="width:100%;"><i class="fa fa-caret-down minimize-arrow" style="float:right"></i></td>
+								</tr>
+							</thead>
+							<tbody style="overflow-y: scroll; max-height:12em; display:block;">
+								
+							</tbody>
+							
+						</table>
+					</div>
+				</li>
+				<li>
+					<div>
+						<table id="class-table">
+							<thead>
+								<tr style="display:block;" >
+									<td style="width:100%;">Classes</td>
+									<td style="width:100%;"><i class="fa fa-caret-down minimize-arrow" style="float:right"></i></td>
+								</tr>
+							</thead>
+							<tbody style="overflow-y: scroll; height:12em; display:block;">
+								
+							</tbody>
+							
+						</table>
+					</div>
+				</li>
+
+				<li>
+					<div>
+						<table id="boxes-table">
+							<thead>
+								<tr style="display:block;" >
+									<td style="width:100%;">Boxes</td>
+									<td style="width:100%;"><i class="fa fa-caret-down minimize-arrow" style="float:right"></i></td>
+								</tr>
+							</thead>
+							<tbody style="overflow-y: scroll; max-height:12em; display:block;">
+								
+							</tbody>
+							
+						</table>
+					</div>
+				</li>
+	
+			</ul>
+			<ul id='extratools'>
+				<label for="intensityFilter">View Intensity</label>
+				<input type='checkbox' id='intensityFilter'>
+			</ul>
+
+		</nav>
+
+		<div id='statusTextContainer'>
+			<p id='statusText'>Processing...</p>
+		</div>	
+		
+
+		<div id='classAddPanel' class='modal'>
+			<div class='panelExit'><i class='fa fa-times'></i></div>
+			<div class='panelRow'>
+				<label for="newClassName">New Class Name:</label>
+				<input type="text" id="newClassName" name="newClassName">
+			</div>
+			<div class='panelRow'>
+				<label for="newClassColor">New Class Color:</label>
+				<input type='color' id='newClassColor' value="#FF0000">
+			</div>
+			<div class='panelRow'>
+				<div id="submitNewClass" class='submitBtn'>Apply</div>
+			</div>
+			
+		</div>
+
+		<div id="BBoxPanel">
+			<ul id="BBox_wrapper" class='wrapper'>
+				<table id='boxDetails'>
+					<tbody id='submitMods'>
+						
+						<tr id="classCont" class='boxCont'>
+							<td>
+								<label for="classSelector">Class:</label>
+							</td> 
+						
+						</tr>
+						<tr id="instanceCont" class='boxCont'>
+							<td>
+								<label for="instanceSelector">New Instance?</label>
+								<input type="checkbox" name="instanceSelector" id="instanceSelector">
+							</td> 
+						
+						</tr>
+					</tbody>
+					
+				</table>
+				<div id="submitBBox" class='boxCont submitBtn'>Apply</div>
+			</ul>
+		</div>
+
+		<div id='imgBox'>
+			<div id='imgDisplay'>
+				<img id='realImage'></i>
+				<img id='maskImage'></i>
+				<img id='frameImage'></i>
+				<canvas id='imgCanvas'></canvas>
+				<canvas id='paintCanvas'></canvas>
+				<canvas id='realCanvas'></canvas>
+				
+			</div>
+		
+			<div class='contana'>
+				<label for='maskOpacity'>Opacity:</label>
+				<input type='range' min='0' max='100' step='1' readonly="readonly" value='70' name='maskOpacity' id='maskOpacity'>
+				<label for='zoomRange' style="display:none">Zoom:</label>
+				<input type='range' min='1' max='10' step='0.1' readonly="readonly" value='1' name='zoomRange' id='zoomRange' style="display:none">
+				<!-- <i class="fa fa-recycle" id="show-points-image"></i> -->
+				<i class="fa fa-magic image-btn" id="magicWand2D"></i>
+				<i class="fa fa-star-o image-btn" id="poly2D"></i>
+				<i class="fa fa-paint-brush image-btn" id="paintBrush2D"></i>
+				<!-- <i class="fa fa-search" id="zoomNear"></i> -->
+				<i class="fa fa-gears" id="detectron"></i>
+				<i class="fa fa-bell image-btn" id="straightLine2D"></i>
+				<i class="fa fa-question image-btn" id="miscellaneousTools2D"></i>
+				
+			</div>
+		
+		</div>
+
+		<div id='confirmSaveBox'  class='modal'>
+			<div class='panelRow'><p>You have unsaved changes. Would you like to save?</p></div>
+			<div class='panelRow'><div id="saveYes" class='boxCont submitBtn'>Yes</div><div id="saveNo" class='boxCont submitBtn'>No</div></div>
+			
+		</div>
+
+
+		
+
+		<div id='errorBox'  class='modal'>
+			<div class='panelRow'><p id="errorMessage"></p></div>
+			<div class='panelRow'><div id="confirmError" class='boxCont submitBtn'>Ok</div></div>
+			
+		</div>
+
+		<div id='dialog-box' class='modal'>
+			<div class='panelExit'><i class='fa fa-times'></i></div>
+			<div class='panelRow'>
+				<label for="pointSizeRange" class="pointSizeLabel">Point Size: <span id="pointSizeVal">1</span></label> 
+				<input type="range" min="1" max="3" value="1" step="1" name="pointSizeRange" id="pointSizeRange">
+			</div>
+			<div class='panelRow'>
+				<div id="submitSettings" class='submitBtn'>Apply</div>
+			</div>
+		</div>
+
+		<div id='settings-box'>
+			<i class="fa fa-cog" id='settings'></i>
+		</div>
+
+		<div id='extrasBox'>
+			<ul id="" class='wrapper'>
+				<table id='extrasBBox'>
+					<tbody id='submitMods'>
+
+						<tr class='boxCont boxModi'>
+							<td>
+								<label for="yawRange" class="rangeLabel">Y-axis angle (yaw): <span id="yawVal"></span></label>
+								<input type="range" min="0" max="360" value="0" step="0.1" name="yawRange" id="yawRange" class="angleRange">
+							</td> 
+						</tr>
+
+					</tbody>
+					
+				</table>
+			</ul>
+		</div>
+	
+		<div id="container"></div>
+		<!-- <canvas id='fullScreenCanvas'></canvas> -->
+
+		<div id='viewSelector'>
+			<div class="switch-field">
+				<input type="radio" id="orthographic-mode" name="switch-one" value="orthographic"/>
+				<label for="orthographic-mode">Orthographic</label>
+				<input type="radio" id="perspective-mode" name="switch-one" value="perspective" checked/>
+				<label for="perspective-mode">Perspective</label>
+			</div>
+		</div>
+
+		
+		
+		<div id='imgcontainer'>
+			<img id='projimage' src="" clicked="false">
+		</div>
+		<div id="info">LiDAR Annotator</div>
+		<div id="draw_bounding_box_reminder"><p></p></div>
+		<div id="footer"><p></p></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/magic-wand-tool@latest/dist/magic-wand.min.js"></script>
+
+	<script src="static/js/libs/three.min.js"></script>
+	<script src="static/js/libs/OrbitControls.js?nocache"></script>
+	<script src="static/js/libs/Detector.js"></script>
+	<script src="static/js/libs/stats.min.js"></script>
+	<script src="static/js/libs/jquery-ui.js"></script>
+	<script src="static/js/libs/dat.gui.min.js"></script>
+	<script src="static/js/libs/threex.domevents.js"></script>
+
+	<script src="static/js/frame.js?nocache"></script>
+	<script src="static/js/app.js?nocache"></script>
+	<script src="static/js/frameImage.js?nocache"></script>
+	<script src="static/js/box.js?nocache"></script>
+
+	<script src="static/js/utils.js?nocache"></script>
+
+	<script src="static/js/pointcloud.js?nocache"></script>
+	<script src="static/js/ObjectTable.js?nocache"></script>
+	<script src="static/js/Box.js?nocache"></script>
+	<script src="static/js/boxTransforms.js?nocache"></script>
+	
+
+	<script src="static/js/SubmitBuilder.js?nocache"></script>
+
+	<script src="static/js/ImagePanel.js?nocache"></script>
+
+	<script src="static/js/GenericTool.js?nocache"></script>
+
+	<script src="static/js/2Dtools/Polygon2DTool.js?nocache"></script>
+	<script src="static/js/2Dtools/MagicWandTool.js?nocache"></script>
+	<script src="static/js/2Dtools/PaintBrush2DTool.js?nocache"></script>
+	<script src="static/js/2Dtools/StraightLineTool.js?nocache"></script>
+	<script src="static/js/2Dtools/MiscellaneousTools.js?nocache"></script>
+
+	<script src="static/js/tools/DefaultTool.js?nocache"></script>
+	<script src="static/js/tools/CuboidHandler.js?nocache"></script>
+	<script src="static/js/tools/Polygon3DTool.js?nocache"></script>
+	<script src="static/js/tools/Miscellaneous3DTools.js?nocache"></script>
+
+
+
+
+	<script src="static/js/eventListeners.js?nocache"></script>
+	
+	<script src="static/js/main.js?nocache"></script>
+
+
+
+	</body>
+</html>

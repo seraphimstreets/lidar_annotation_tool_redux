@@ -1,0 +1,29 @@
+[33mcommit 49d905fe50040727ad9ee2a8a6abb7d44bdb28a5[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: Edison Siow <edisonsiowxiong@gmail.com>
+Date:   Mon Nov 23 08:49:40 2020 +0800
+
+    to work on
+
+[33mcommit 3b37a09beddb734eb56f86b0b5cce26213a5b05e[m
+Author: Edison Siow <edisonsiowxiong@gmail.com>
+Date:   Sun Nov 22 16:14:38 2020 +0800
+
+    workable resizing yay
+
+[33mcommit 6c6f52f9402c94932e257da45d2fcac55988a718[m
+Author: Edison Siow <edisonsiowxiong@gmail.com>
+Date:   Sun Nov 22 09:10:53 2020 +0800
+
+    god help resizing
+
+[33mcommit d4e5489698b729a29a03dbced9d30450d70fefad[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Edison Siow <edisonsiowxiong@gmail.com>
+Date:   Sat Nov 21 15:15:02 2020 +0800
+
+    jank resizing
+
+[33mcommit 587c43dd03e72795f15d62f73a0400b469601d57[m
+Author: Edison Siow <edisonsiowxiong@gmail.com>
+Date:   Sat Nov 21 11:57:19 2020 +0800
+
+    finally rotation works
