@@ -4,5 +4,6 @@
 __pycache__/
 node_modules
 app/final_out
-
+app/static
 app/bonnetal/models
+env
