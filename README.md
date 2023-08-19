@@ -139,7 +139,7 @@ In orthographic mode, you can translate/resize along x/z axis, and rotate around
 
 The eye indicates the front of the box. 
 
-![alt text](https://github.com/seraphimstreets/lidar_annotation_tool_redux/common/media/2d3dprojection.gif)
+![alt text](https://github.com/seraphimstreets/lidar_annotation_tool_redux/blob/master/common/media/2d3dprojection.gif)
 
 ### 3D Polygon tool (pencil icon)
 
