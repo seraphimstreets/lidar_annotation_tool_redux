@@ -131,6 +131,8 @@ Image (pixel) class and instance data are also saved in separate integer arrays.
 
 ### Bounding box (box icon)
 
+![Bounding box tool](https://github.com/seraphimstreets/lidar_annotation_tool_redux/blob/master/common/media/3dboundingbox.gif)
+
 Press and hold 'B' to initialize the tool. While holding 'B', click anywhere on the pointcloud to create a bounding box in that location. You will see the submit panel appear as well. 
 
 In perspective mode, you can only translate/resize the bounding box in the y-direction. Hold 'R' key and drag the orbs to resize. Hold 'R' key and drag the pole to translate.
@@ -139,7 +141,7 @@ In orthographic mode, you can translate/resize along x/z axis, and rotate around
 
 The eye indicates the front of the box. 
 
-![alt text](https://github.com/seraphimstreets/lidar_annotation_tool_redux/blob/master/common/media/2d3dprojection.gif)
+![3D Polygon tool](https://github.com/seraphimstreets/lidar_annotation_tool_redux/blob/master/common/media/2d3dprojection.gif)
 
 ### 3D Polygon tool (pencil icon)
 
